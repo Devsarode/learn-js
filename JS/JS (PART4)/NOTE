@@ -1,0 +1,70 @@
+FOR LOOP
+
+        -used to repeat a block of code a specific number of times or iterate over arrays and collections.
+        -syntax:
+            for (initialization; condition; increment/decrement) {
+                // code to be executed
+            }
+        -example:
+            for (let i = 1; i <= 10; i++) {
+                console.log(i); // Output -> 1 2 3 4 5 6 7 8 9 10 (each number on a new line)
+            }   
+        -looping through an array:
+                let fruits = ["apple", "banana", "cherry"];
+                for (let i = 0; i < fruits.length; i++) {
+                        console.log(fruits[i]); // Output -> "apple" "banana" "cherry" (each fruit on a new line)
+                }
+                
+WHILE LOOP  
+        -used to repeat a block of code as long as a specified condition is true.
+        -syntax:
+            while (condition) {
+                // code to be executed
+            }
+
+
+
+FOR OF LOOP
+        -used to iterate over iterable objects (like arrays, strings, etc.) and access each element directly.
+        -syntax:    
+            for (variable of iterable) {
+                // code to be executed
+            }   
+        -example:
+            let colors = ["red", "green", "blue"];
+
+            for (let color of colors) {
+                console.log(color); // Output -> "red" "green" "blue" (each color on a new line)
+            }   
+
+
+TO DO APP 
+        - A simple to-do app can be created using arrays and loops to manage and display tasks.
+        - example:
+            let todoList = [];  
+
+            function addTask(task) {
+                todoList.push(task);
+            }   
+            function displayTasks() {
+                console.log("To-Do List:");
+                for (let task of todoList) {
+                    console.log("- " + task);
+                }   
+            }   
+
+        // Usage
+        addTask("Buy groceries");
+        addTask("Walk the dog");
+        addTask("Read a book");
+        displayTasks();
+        // Output:
+        // To-Do List:
+        // - Buy groceries
+        // - Walk the dog
+        // - Read a book
+        -LIST - TO SHOW ALL TO DOs 
+        -ADD - TO ADD A NEW TO DO
+        -DELETE - TO DELETE A TO DO
+        -UPDATE - TO UPDATE A TO DO 
+        -QUIT - TO EXIT THE APP

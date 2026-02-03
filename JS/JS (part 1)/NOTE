@@ -1,0 +1,320 @@
+USING THE CONSOLE 
+
+    -IT USES REPL (READ-EVALUATE-PRINT-LOOP)
+
+
+VARIABLE 
+
+    -A SIMPLE NAME TO STOREAGE LOCATION FOR A VALUE 
+    - Eg x = 5 , NAME = "JOHN"
+    -CAN STORE DIFFERENT TYPES OF VALUES (NUMBERS, STRINGS, ARRAYS, OBJECTS, ETC)
+
+
+DATA TYPES
+
+    -NUMBER (5, 3.14)
+    -STRING ("HELLO", 'WORLD')
+    -BOOLEAN (TRUE, FALSE)
+    -NULL (NO VALUE)
+    -UNDEFINED (VALUE NOT ASSIGNED)
+    -SYMBOL (UNIQUE IDENTIFIER)
+    -BIGINT (LARGE INTEGERS)
+
+
+typeof OPERATOR
+
+        -USED TO DETERMINE THE TYPE OF A VALUE OR VARIABLE
+        -Eg typeof 5 // "number"
+        -Eg typeof "hello" // "string"
+        -Eg typeof true // "boolean"
+        -Eg typeof undefined // "undefined"
+        -Eg typeof null // "object" (THIS IS A KNOWN JAVASCRIPT QUIRK)
+        -Eg typeof Symbol("id") // "symbol"
+        -Eg typeof 9007199254740991n // "bigint"
+
+
+NUMBERS DATA TYPE
+
+    -INCLUDES BOTH INTEGER AND FLOATING-POINT NUMBERS
+    -SUPPORTS ARITHMETIC OPERATIONS (+, -, *, /, %)
+    -Eg 5, 3.14, -10, 0.001
+
+
+OPERATIONS
+
+    -ADDITION (+)
+    -SUBTRACTION (-)
+    -MULTIPLICATION (*)
+    -DIVISION (/)
+    -MODULUS (%) (REMAINDER OF DIVISION)
+    -EXPONENTIATION (**)
+    -Eg 5 + 3 // 8
+    -Eg 10 - 4 // 6
+    -Eg 2 * 3 // 6
+    -Eg 8 / 2 // 4  
+    -Eg 10 % 3 // 1 (REMAINDER WHEN 10 IS DIVIDED BY 3)
+    -Eg 2 ** 3 // 8 (2(BASE)RAISED TO THE POWER OF 3)
+
+
+NaN (NOT A NUMBER)
+
+    -A SPECIAL VALUE REPRESENTING AN UNDEFINED OR UNREPRESENTABLE VALUE IN MATHEMATICS
+    -THE NaN GLOBAAL PROPERTY IS A VALUE REPRESENTING "NOT A NUMBER"
+    -Eg 0/0 // NaN
+    -Eg Math.sqrt(-1) // NaN
+
+
+OPERTOR PRECEDENCE
+
+    -DEFINES THE ORDER IN WHICH OPERATIONS ARE PERFORMED
+    -TOP TO BOTTOM
+    1. PARENTHESES ()
+    2. EXPONENTIATION (**)
+    3. MULTIPLICATION (*) AND DIVISION (/) (LEFT TO RIGHT)
+    4. ADDITION (+) AND SUBTRACTION (-) (LEFT TO RIGHT)
+
+    -Eg 3 + 5 * 2 // 13 (MULTIPLICATION FIRST, THEN ADDITION)
+    -Eg (3 + 5) * 2 // 16 (PARENTHESES FIRST, THEN MULTIPLICATION)
+    -Eg 10 / 2 + 3 * 4 // 17 (DIVISION AND MULTIPLICATION FIRST, THEN ADDITION)
+    -Eg 10 / (2 + 3) * 4 // 8 (PARENTHESES FIRST, THEN DIVISION, THEN MULTIPLICATION)
+    -Eg 2 ** 3 ** 2 // 512 (RIGHT-TO-LEFT ASSOCIATIVITY FOR EXPONENTIATION)
+    -Eg (2 ** 3) ** 2 // 64 (PARENTHESES FIRST, THEN EXPONENTIATION)
+    -Eg 5 + 3 * 2 ** 2 // 17 (EXPONENTIATION FIRST, THEN MULTIPLICATION, THEN ADDITION)
+    -Eg 5 + (3 * 2) ** 2 // 41 (PARENTHESES FIRST, THEN EXPONENTIATION, THEN ADDITION)
+
+
+let KEYWORD
+
+    -USED TO DECLARE A BLOCK-SCOPED VARIABLE
+    -SYNTAX TO DECLARE A VARIABLE:
+        let variableName = value;
+    -Eg let x; // undefined result but variable x is declared
+    -Eg let x = 5;
+    -Eg let name = "John";
+    -Eg let age = 30;
+        age=age + 1; //UPDATE BY REASSIGNING A NEW VALUE
+
+    EG  let num1 =1;
+        let num2 =2;
+        let sum = num1 + num2; // sum now holds the value 3
+        result:-  sum //3
+
+
+
+const KEYWORD
+
+    -USED TO DECLARE A BLOCK-SCOPED VARIABLE THAT CANNOT BE REASSIGNED
+    -SYNTAX TO DECLARE A CONSTANT VARIABLE:
+        const variableName = value;
+    -Eg const pi = 3.14;
+    -Eg const name = "Alice";
+    -Eg const maxScore = 100;
+    -Eg const birthYear = 1990;
+        //birthYear = 1991; // THIS WILL CAUSE AN ERROR BECAUSE birthYear IS A CONSTANT
+    -Eg const num1 = 10;
+        const num2 = 20;
+        const total = num1 + num2; // total now holds the value 30
+        result:- total //30
+    -Eg const greeting = "Hello, " + name + "!"; // greeting now holds the value "Hello, Alice!"
+        result:- greeting //"Hello, Alice!"
+    -Eg const area = pi * (5 ** 2); // area now holds the value 78.5
+        result:- area //78.5
+
+
+var KEYWORD
+
+    -USED TO DECLARE A VARIABLE, BUT IT IS FUNCTION-SCOPED OR GLOBALLY SCOPED
+    -LESS COMMONLY USED IN MODERN JAVASCRIPT DUE TO SCOPING ISSUES
+    -older WAY TO DECLARE VARIABLES
+    -not used in modern JS
+    -SYNTAX TO DECLARE A VARIABLE:
+        var variableName = value;
+    -Eg var x = 10;
+    -Eg var name = "Bob";
+    -Eg var isActive = true;
+    -Eg var count = 0;
+        count = count + 1; //UPDATE BY REASSIGNING A NEW VALUE
+
+
+ASSIGNMENT OPERATORS
+
+    -USED TO ASSIGN VALUES TO VARIABLES 
+    -Eg = (ASSIGNMENT)
+    -Eg += (ADDITION ASSIGNMENT) x += 5 IS EQUIVALENT TO x = x + 5
+    -Eg -= (SUBTRACTION ASSIGNMENT) x -= 3 IS EQUIVALENT TO x = x - 3
+    -Eg *= (MULTIPLICATION ASSIGNMENT) x *= 2 IS EQUIVALENT TO x = x * 2
+    -Eg /= (DIVISION ASSIGNMENT) x /= 4 IS EQUIVALENT TO x = x / 4
+    -Eg %= (MODULUS ASSIGNMENT) x %= 3 IS EQUIVALENT TO x = x % 3
+    -Eg **= (EXPONENTIATION ASSIGNMENT) x **= 2 IS EQUIVALENT TO x = x ** 2
+    
+    -Eg let x = 10;
+        x += 5; // x is now 15
+        x -= 3; // x is now 12
+        x *= 2; // x is now 24
+        x /= 4; // x is now 6
+        x %= 4; // x is now 2
+        x **= 3; // x is now 8 (2^3)
+
+
+UNARY OPERATORS
+
+    -OPERATORS THAT OPERATE ON A SINGLE OPERAND
+    -Eg + (UNARY PLUS) CONVERTS ITS OPERAND TO A NUMBER
+    -Eg - (UNARY MINUS) CONVERTS ITS OPERAND TO A NUMBER AND NEGATES IT
+    -Eg ++ (INCREMENT) INCREASES A NUMBER BY 1
+    -Eg -- (DECREMENT) DECREASES A NUMBER BY 1
+    -Eg typeof (TYPEOF OPERATOR) RETURNS THE TYPE OF A VARIABLE OR VALUE
+    -Eg delete (DELETE OPERATOR) DELETES A PROPERTY FROM AN OBJECT
+
+    -Eg let x = 5;
+        let y = -x; // y is now -5 (UNARY MINUS)
+        let z = +x; // z is now 5 (UNARY PLUS)
+        x++; // x is now 6 (INCREMENT)
+        x--; // x is now 5 (DECREMENT)
+        typeof x; // "number" (TYPEOF OPERATOR)
+
+     PRE-INCREMENT
+    -Eg let a = 5;
+        let b = ++a; // a is now 6, b is 6 UPDATED BEFORE USE
+    POST-INCREMENT
+    -Eg let a = 5;
+        let b = a++; // a is now 6, b is 5 UPDATED AFTER USE
+    PRE-DECREMENT
+    -Eg let a = 5;
+        let b = --a; // a is now 4, b is 4 
+    POST-DECREMENT
+    -Eg let a = 5;
+        let b = a--; // a is now 4, b is 5
+
+
+IDENTIFIER RULES
+
+    -MUST START WITH A LETTER, UNDERSCORE (_), OR DOLLAR SIGN ($),  NO SPACE 
+    -CAN CONTAIN LETTERS, DIGITS, UNDERSCORES, AND DOLLAR SIGNS
+    -CANNOT BE A RESERVED KEYWORD (LIKE let, const, var, if, else, etc.)
+    -CASE-SENSITIVE (myVar AND myvar ARE DIFFERENT IDENTIFIERS)
+    -Eg let myVariable = 10;
+    -Eg let _privateVar = "secret";
+    -Eg let $dollarVar = 100;
+    -Eg let user1 = "Alice";
+    -Eg let user_name = "Bob";
+
+
+Camel CASE
+
+    -A COMMON CONVENTION FOR NAMING VARIABLES AND FUNCTIONS
+    - mostly used in JavaScript
+    -STARTS WITH A LOWERCASE LETTER, AND EACH SUBSEQUENT WORD STARTS WITH AN UPPERCASE LETTER
+    -Eg myVariableName
+
+    -Eg let myVariableName = "value";
+    -Eg function calculateSum() { ... }
+    -Eg let userAge = 25;
+    -Eg function getUserInfo() { ... }
+
+
+snake_case
+
+    -WORDS ARE SEPARATED BY UNDERSCORES (_)
+    -ALL LETTERS ARE LOWERCASE
+    -Eg my_variable_name
+    - MOSTLY USED IN PYTHON
+    
+    -Eg let my_variable_name = "value";
+    -Eg function calculate_sum() { ... }
+    -Eg let user_age = 25;
+    -Eg function get_user_info() { ... }
+
+
+PascalCase
+
+    -EACH WORD STARTS WITH AN UPPERCASE LETTER, INCLUDING THE FIRST WORD
+    -Eg MyVariableName
+
+    -Eg let MyVariableName = "value";
+    -Eg function CalculateSum() { ... }
+    -Eg let UserAge = 25;
+    -Eg function GetUserInfo() { ... }
+
+
+Boolean DATA TYPES
+
+    -it represent a truth value -> true or false / yes or no
+    -eg let age =23;
+        let isAdult=true;
+
+        let age =16;
+        let isAdult=false;
+
+
+TypeScript 
+
+    -Static(variable will only have one type cannot be changed, its value can bee changed )Typed , where JS is dynamic (the type of varibale can be change) typed
+    -TypeScript extends JavaScript by adding types to the language. 
+    -TypeScript speeds up your development experience by catching errors and providing fixes before you even run your code.
+    - made by MICROSOFT
+
+
+STRING DATA TYPES
+
+    - STRINGS ARE TEXT OR SEQUENCE OF Character
+    - can use "" or '' .
+    -EG 
+        let name="dev";
+        let role ="student";
+        let char="a";
+        let num ="23";
+        let empty ="";
+        let sentence = " this is 'apple'. "
+
+
+STRING INDICES
+
+    -let NAME="TONY STARK";
+        NAME[0]='T'   // ZERO BASED INDEXING MEANS STARTS FROM 0
+        NAME[1]='O'
+        NAME[2]='N'
+        NAME[3]='Y'
+        NAME[4]=''
+        NAME[5]='S'
+        NAME[6]='T'
+        .
+        .
+
+    - we can access the individual charcter of string using string 
+    - eg NAME[0]
+         'T' // value at index 0
+
+    - to find the lenght of the string we can use 
+       
+        NAME.lenght
+            10// total no of letter in string meaning length
+    
+    - NAME.length-1; // it will give you the index number (9), not the last character.
+        9 // value
+    - NAME[NAME.length - 1]; // it gives you the last character ("K").
+         k // value
+
+    - "dev".length;
+        3// value , length of string
+    - "dev"[1]
+        e//value , letter at index 2
+  
+
+CONCATENATION 
+
+    - ADDING STRINGS TOGETHER
+    -EG "TONY" + "" + "STARK" = "TONY STARK"
+
+
+NULL DATA TYPES
+
+    - THE NULL VALUE REPRESENT THE INTENTIONAL ABSENCE OF ANY OBJECT VALUE
+    - WE HAVR TO EXPLICITLY ASSIGN IT
+    - NULL IS A KEYWORD
+
+
+UNDEFINED DATA TYPES
+
+    -A VARIABLE THAT HAS NOT BEEN ASSIGNED A VALUE OR THE VALUE IT DOES NOT KNOW IS OF TYPE UNDEFINED.
+

@@ -1,0 +1,197 @@
+OBJECT LITERALS
+        - An object literal is a comma-separated list of name-value pairs wrapped in curly braces.
+        - used to store keyed collections of various data and more complex entities.
+        - Objects are collection of Properties
+        
+        - Objects are preferred to be declared as constants using 'const' keyword to prevent reassignment of the object reference.
+                const car = {
+                    make: "Toyota",
+                    model: "Camry",
+                    year: 2020
+                };
+        - objects can also be declared using 'let' if you plan to reassign the object reference later.
+                let bike = {
+                    brand: "Yamaha",
+                    type: "Sport",
+                    year: 2019
+                };
+        
+        - Objects can store different data types including:
+                - Strings
+                - Numbers
+                - Booleans
+                - Arrays
+                - Other Objects
+                - Functions (Methods)
+
+        -JavaScript automatically converts keys to strings.
+        - even if you use numbers or symbols as keys, they will be converted to strings.
+
+
+        - Syntax:
+                let objectName = {
+                    key1: value1,
+                    key2: value2,
+                    key3: value3
+                };
+        - Example:
+                let person = {  
+                    firstName: "John", 
+                    lastName: "Doe", 
+                    age: 30,
+                    isEmployed: true
+                };
+
+        - Accessing Object Properties:
+                - Dot Notation: person.firstName
+                - Bracket Notation: person["lastName"]
+                                           // if we have to use variables to access properties we use bracket notation
+        - Adding/Modifying Properties:
+                person.age = 31; // Modifying
+                person.city = "New York"; // Adding
+        
+        - Deleting Properties:
+                delete person.isEmployed;
+        
+        - Iterating Over Properties:
+                for (let key in person) {
+                    console.log(key + ": " + person[key]);
+                }
+        
+
+
+        - Nested Objects:
+                let employee = {
+                    name: "Alice",
+                    address: {
+                        street: "123 Main St",
+                        city: "Wonderland"
+                    }
+                };      
+        - Accessing Nested Properties:
+                console.log(employee.address.city); // Outputs: Wonderland      
+        
+        - Methods in Objects:
+                let calculator = {
+                    add: function(a, b) {
+                        return a + b;
+                    },
+                    subtract: function(a, b) {
+                        return a - b;
+                    }
+                };
+                console.log(calculator.add(5, 3)); // Outputs: 8
+
+
+        - Shorthand Property Names (ES6):
+                let x = 10;
+                let y = 20;
+                let point = { x, y }; // Equivalent to { x: x, y: y }
+        
+        - Computed Property Names (ES6):
+                let propName = "score";         
+                let player = {
+                    [propName]: 100
+                }; // Creates a property 'score' with value 100
+
+        - Object Destructuring (ES6):
+                let { firstName, age } = person; // Extracts firstName and age from person object
+                console.log(firstName); // Outputs: John
+                console.log(age); // Outputs: 30
+        - Spread Operator with Objects (ES6):
+                let obj1 = { a: 1, b: 2 };      
+                let obj2 = { ...obj1, c: 3 }; // Merges obj1 into obj2
+                console.log(obj2); // Outputs: { a: 1, b: 2
+                                        //            c: 3 }
+
+
+THREAD / TWITTER POST
+        - Objects are fundamental in JavaScript for structuring data.
+        - They allow for easy access, modification, and organization of related data.
+        - Mastering object literals is essential for effective JavaScript programming!
+        
+
+        -create an object literal for the propertirs of thread / twitter post
+               
+                const tweet = {
+                    username: "js_dev",
+                    content: "Learning about object literals in JavaScript!",
+                    timestamp: "2024-06-15T10:30:00Z",
+                    likes: 150,
+                    retweets: 25,
+                    comments: [
+                        { user: "coder123", comment: "Great post!" },
+                        { user: "dev_guru", comment: "Very informative." }
+                    ],
+                    isRetweeted: false,
+                    share: function() {
+                        this.isRetweeted = true;
+                        this.retweets += 1;
+                    }
+                };
+
+
+        - Accessing tweet properties:
+                console.log(tweet.username); // Outputs: js_dev
+                console.log(tweet.content); // Outputs: Learning about object literals in JavaScript!
+                console.log(tweet.comments[0].comment); // Outputs: Great post!
+        - Using the share method:
+                tweet.share();  
+                console.log(tweet.isRetweeted); // Outputs: true
+                console.log(tweet.retweets); // Outputs: 26     
+        - This object literal represents a Twitter post with various properties and a method to share the tweet.
+        
+
+Array of Objects 
+        
+        - for multiple students
+        - Create an array of objects to represent a list of students with properties like name, age, and grade.
+        
+                const students = [
+                    { name: "Alice", age: 20, grade: "A" },
+                    { name: "Bob", age: 22, grade: "B" },
+                    { name: "Charlie", age: 19, grade: "C" }
+                ];
+        
+        - Accessing student properties:
+                console.log(students[0].name); // Outputs: Alice
+                console.log(students[1].age); // Outputs: 22
+        
+        - Iterating over the array of students:
+                students.forEach(student => {
+                    console.log(student.name + " is " + student.age + " years old and has a grade of " + student.grade);
+                });
+        
+        - This structure allows for easy management and manipulation of student data.
+
+
+MAth OBJECT
+        - The Math object in JavaScript is a built-in object that provides properties and methods for mathematical constants and functions.
+        - It is not a constructor, so you cannot create instances of it.
+        
+        - Common Math Properties:
+                - Math.PI: Represents the ratio of the circumference of a circle to its diameter (approximately 3.14159).
+                - Math.E: Represents Euler's number (approximately 2.718).
+        
+        - Common Math Methods:
+                - Math.abs(x): Returns the absolute value of x.
+                - Math.ceil(x): Rounds x up to the nearest integer.
+                - Math.floor(x): Rounds x down to the nearest integer.
+                - Math.round(x): Rounds x to the nearest integer.
+                - Math.max(a, b, ...): Returns the largest of the given numbers.
+                - Math.min(a, b, ...): Returns the smallest of the given numbers.
+                - Math.random(): Returns a pseudo-random number between 0 (inclusive) and 1 (exclusive).
+                - Math.sqrt(x): Returns the square root of x.
+        
+        - Example Usage:
+                console.log(Math.PI); // Outputs: 3.141592653589793
+                console.log(Math.abs(-5)); // Outputs: 5
+                console.log(Math.ceil(4.2)); // Outputs: 5
+                console.log(Math.floor(4.8)); // Outputs: 4
+                console.log(Math.round(4.5)); // Outputs: 5
+                console.log(Math.max(1, 3, 2)); // Outputs: 3
+                console.log(Math.min(1, 3, 2)); // Outputs: 1
+                console.log(Math.random()); // Outputs: A random number between 0 and 1
+                console.log(Math.sqrt(16)); // Outputs: 4
+
+                

@@ -1,0 +1,294 @@
+STRING METHODS
+    
+    - Methods -> Functions that are built into a data type .
+                 or action s that can be performed on objects of that data type
+
+    - String Methods -> Functions that are built into the String data type .  
+                        or action s that can be performed on objects of the String data type
+
+    - String Methods are called by appending the method name to the string object with a dot (.) in between
+
+    - FORMAT -> stringObject.methodName()
+
+    - Example of String Method 
+        let name = "john"
+       console.log(name.toUpperCase()) // Output -> "JOHN"
+        console.log(name.toLowerCase()) // Output -> "john"
+    
+    - Some commonly used String Methods
+        1. toUpperCase() -> Converts a string to uppercase letters
+        2. toLowerCase() -> Converts a string to lowercase letters
+        3. trim() -> Removes whitespace from both ends of a string
+        4. indexOf(substring) -> Returns the index of the first occurrence of the specified substring, or -1 if not found
+        5. slice(startIndex, endIndex) -> Extracts a section of a string and returns it as a new string . Ending index is not included.
+        6. replace(oldSubstring, newSubstring) -> Replaces occurrences of a specified substring with a new substring
+        7. split(separator) -> Splits a string into an array of substrings based on the specified separator
+        8. charAt(index) -> Returns the character at the specified index in a string
+        9. includes(substring) -> Checks if a string contains the specified substring and returns true or false
+       10. concat(string1, string2, ...) -> Joins two or more strings and returns a new string
+
+
+
+    - Example Usage of Some String Methods
+        let message = "  Hello, World!  "
+    1   console.log(message.toUpperCase()) // Output -> "  HELLO, WORLD!  "
+    2   console.log(message.toLowerCase()) // Output -> "  hello, world!  "
+    3   console.log(message.trim()) // Output -> "Hello, World!"
+    4   console.log(message.indexOf("World")) // Output -> 9
+    5   console.log(message.slice(2, 7)) // Output -> "Hello"
+    6   console.log(message.replace("World", "JavaScript")) // Output -> "  Hello, JavaScript!  "
+    7   console.log(message.split(", ")) // Output -> ["  Hello", "World!  "]
+    8   console.log(message.charAt(7)) // Output -> "W"
+    9   console.log(message.includes("Hello")) // Output -> true
+    10  console.log(message.concat(" How are you?")) // Output -> "  Hello, World!   How are you?"
+    11  console.log(message.repeat(3)) // Output -> "  Hello, World!    Hello, World!    Hello, World!  "
+
+    - String are immutable in JavaScript meaning their values cannot be changed after they are created.
+    - Note -> String Methods do not change the original string. They return a new string with the applied changes.
+
+    - Example to demonstrate immutability of strings
+        let originalString = "hello"
+        let upperCaseString = originalString.toUpperCase()
+        console.log(originalString) // Output -> "hello"
+        console.log(upperCaseString) // Output -> "HELLO"
+
+
+String Methods with ARGUMENTS
+    -Argument is a some value that we pass to the method to customize its behavior
+    -FORMAT 
+        stringObject.methodName(argument1, argument2, ...)
+    
+    - Example of String Method with Argument
+        let text = "Hello, World!"
+        console.log(text.indexOf("World")) // Output -> 7
+        console.log(text.slice(0, 5)) // Output -> "Hello"
+        console.log(text.slice(-2)) // Output -> "d!" last two characters
+        console.log(text.replace("World", "JavaScript")) // Output -> "Hello, JavaScript!"
+        console.log(text.split(", ")) // Output -> ["Hello", "World!"]
+
+
+Method Chaining
+    - Method Chaining is the process of calling multiple methods on the same object in a single line of code
+    - Each method call returns a new object, allowing you to call another method on that returned object
+
+    - Example of Method Chaining
+        let message = "  Hello, World!  "
+        let result = message.trim().toUpperCase().replace("WORLD", "JAVASCRIPT")
+        console.log(result) // Output -> "HELLO, JAVASCRIPT!"
+    
+    - In the above example, we first trim the whitespace from the string, then convert it to uppercase, and finally replace "WORLD" with "JAVASCRIPT" all in one line of code.
+
+
+ARRAY 
+
+    - Array is a special variable that can hold more than one value at a time.
+    - Array is a collection of items stored at contiguous memory locations.
+    - Each item in an array is called an element.
+    - Each element in an array has a numeric index starting from 0.
+    - Array can hold multiple data types including numbers, strings, objects, and even other arrays.
+    - Array is a type of object in JavaScript.
+    - Array is created using square brackets [] and elements are separated by commas.
+
+    - FORMAT -> let arrayName = [element1, element2, element3, ...];
+    - Example of Array
+        let fruits = ["apple", "banana", "cherry"];
+        console.log(fruits); // Output -> ["apple", "banana", "cherry"]
+        console.log(fruits[0]); // Output -> "apple"
+        console.log(fruits[1]); // Output -> "banana"
+        console.log(fruits[2]); // Output -> "cherry"
+        console.log(fruits.length); // Output -> 3 (number of elements in the array)
+        console.log(fruits[fruits.length - 1]); // Output -> "cherry" (last element in the array)
+        
+    - Arrays are mutable meaning their elements can be changed after they are created.
+    - Example to demonstrate mutability of arrays
+        let numbers = [1, 2, 3];
+        numbers[0] = 10; // changing the first element
+        console.log(numbers); // Output -> [10, 2, 3]
+    
+    -ARRAY PROPERTIES AND METHODS
+    - Array Properties -> Characteristics or attributes of an array that provide information about the array.
+    - Array Methods -> Functions that are built into the Array data type .  
+                        or action s that can be performed on objects of the Array data type
+    
+    - Some commonly used Array Properties and Methods
+        1. length (Property) -> Returns the number of elements in the array
+        2. push(element1, element2, ...) (Method) -> Adds one or
+              more elements to the end of the array and returns the new length of the array
+        3. pop() (Method) -> Removes the last element from the array and returns that element
+        4. shift() (Method) -> Removes the first element from the array and returns that element
+        5. unshift(element1, element2, ...) (Method) -> Adds one or more elements to the beginning of the array and returns the new length of the array
+        6. indexOf(element) (Method) -> Returns the first index at which a given element can be found in the array, or -1 if not found
+        7. slice(startIndex, endIndex) (Method) -> Returns a shallow copy of a portion of the array into a new array object selected from startIndex to endIndex (endIndex not included)
+        8. splice(startIndex, deleteCount, item1, item2, ...) (Method) -> Changes the contents of an array by removing or replacing existing elements and/or adding new elements in place
+                 splice() method can be used to add, remove, or replace elements in an array at a specific index.
+                     CHANGES IN THE ORIGINAL ARRAY
+      
+        9. forEach(callback) (Method) -> Executes a provided function once for each array element
+               eg -> array.forEach(function(element, index, array) { ... });
+        10. map(callback) (Method) -> Creates a new array populated with the results of calling a provided function on every element in the calling array
+                eg -> let newArray = array.map(function(element, index, array) { ... });
+        11. filter(callback) (Method) -> Creates a new array with all elements that pass the test implemented by the provided function
+                eg -> let newArray = array.filter(function(element, index, array) { ... });
+        12. reduce(callback, initialValue) (Method) -> Executes a reducer function on each element of the array, resulting in a single output value
+                eg -> let result = array.reduce(function(accumulator, currentValue, index, array)
+        13. includes(element) (Method) -> Determines whether an array includes a certain element, returning true or false as appropriate
+        14. concat(array1, array2, ...) (Method) -> Merges two or more arrays and returns a new array
+        15. sort() (Method) -> Sorts the elements of an array in place and returns the sorted array
+        16. reverse() (Method) -> Reverses the order of the elements in an array in place and returns the reversed array    
+        17. join(separator) (Method) -> Joins all elements of an array into a string and returns this string. The separator specifies a string to separate each pair of adjacent elements. If omitted, the array elements are separated with a comma.
+        18. find(callback) (Method) -> Returns the value of the first element in the array that satisfies the provided testing function. Otherwise undefined is returned.
+                eg -> let foundElement = array.find(function(element, index, array) { ... });
+        19. findIndex(callback) (Method) -> Returns the index of the first element in the array that satisfies the provided testing function. Otherwise, it returns -1, indicating that no element passed the test.
+                eg -> let foundIndex = array.findIndex(function(element, index, array) { ...
+        20. flat(depth) (Method) -> Creates a new array with all sub-array elements concatenated into it recursively up to the specified depth. The default depth is 1.
+                eg -> let newArray = array.flat(depth);
+        21. flatMap(callback) (Method) -> First maps each element using a mapping function, then flattens the result into a new array. It is identical to a map followed by a flat of depth 1.
+                eg -> let newArray = array.flatMap(function(element, index, array) { ...
+        22. Emptying an Array -> You can empty an array by setting its length property to 0.
+                eg -> let arr = [1, 2, 3]; arr.length = 0; console.log(arr); // Output -> []
+        23. Copying an Array -> You can create a shallow copy of an array using the slice() method without any arguments.
+                eg -> let originalArray = [1, 2, 3]; let copiedArray = originalArray.slice(); console.log(copiedArray); // Output -> [1, 2, 3]
+        24. Multidimensional Arrays -> You can create arrays that contain other arrays as elements, allowing you to create matrices or grids.
+                eg -> let matrix = [[1, 2, 3], [4, 5, 6], [7, 8, 9]]; console.log(matrix[0][1]); // Output -> 2 (accessing element in a 2D array)   
+    25. Checking if a Variable is an Array -> You can use the Array.isArray() method to check if a variable is an array.
+                eg -> let arr = [1, 2, 3]; console.log(Array.isArray(arr)); // Output -> true
+                       let notArr = "hello"; console.log(Array.isArray(notArr)); // Output ->
+                        false
+    
+    
+    - Example Usage of Some Array Properties and Methods
+        
+        let fruits = ["apple", "banana", "cherry"];
+        fruits.push("date") // adds "date" to the end of the array
+        console.log(fruits) // Output -> ["apple", "banana", "cherry", "date"]
+
+        fruits.pop()   // removes the last element ("date") from the array
+        console.log(fruits) // Output -> ["apple", "banana", "cherry"]
+
+        fruits.shift()   // removes the first element ("apple") from the array
+        console.log(fruits) // Output -> ["banana", "cherry"]   
+
+        fruits.unshift("apricot")  // adds "apricot" to the beginning of the array
+        console.log(fruits) // Output -> ["apricot", "banana", "cherry"]  
+
+        console.log(fruits.indexOf("banana")) // Output -> 1 (index of "banana")
+        
+        console.log(fruits.slice(0, 2)) // Output -> ["apricot", "banana"] (creates a new array with the first two elements)
+       
+      
+        fruits.splice(1, 1, "blueberry", "blackberry") // removes 1 element at index 1 ("banana") and adds "blueberry" and "blackberry"
+       
+        console.log(fruits) // Output -> ["apricot", "blueberry", "blackberry", "cherry"]
+
+        console.log(num.concat(fruits)); // combines two arrays  
+        // // Output -> [1, 2, 3, 4, 5, "apricot", "banana", "cherry"]
+        console.log(fruits.concat(num)); // combines two arrays
+        // Output -> ["apricot", "banana", "cherry", 1, 2, 3, 4, 5]
+
+        console.log(fruits.reverse()); // reverses the array
+        // Output -> ["cherry", "banana", "apricot"]
+
+        console.log(fruits.sort()); // sorts the array alphabetically
+        // Output -> ["apricot", "banana", "cherry"]
+
+        //first letter of the name of the first user)
+            let users = [
+        { name: "Alice", age: 25 },
+        { name: "Bob", age: 30 },
+        { name: "Charlie", age: 35 }
+            ];
+            console.log(users[0].name); // Output -> "Alice" (name of the first user)
+            console.log(users[0].name[0]); // Output -> "A"  (first letter of the name of the first user)
+            console.log(users[2].name[6]); // Output -> "e"  (last letter of the name of the third user)
+            console.log(users[2].age[1]); // Output -> "5"  (last digit of the age of the third user)
+
+
+
+ARRAY REFERENCES
+
+        - In JavaScript, arrays are reference types, meaning that when you assign an array to a variable, 
+                you are assigning a reference to the array in memory, not the actual array itself.
+        - When you copy an array to another variable, you are copying the reference, not the actual array.
+                Therefore, changes made to the new variable will also affect the original array.
+        - Example to demonstrate array references
+           
+            let originalArray = [1, 2, 3];
+            let newArray = originalArray; // copying the reference of originalArray to newArray
+            
+            newArray.push(4); // modifying newArray
+            console.log(originalArray); // Output -> [1, 2, 3, 4] (originalArray is also affected)
+            console.log(newArray); // Output -> [1, 2, 3, 4]
+ 
+        - [1] == [1] // false (different references in memory)
+           let arr1 = [1]; let arr2 = arr1; arr2.push(2); console.log(arr1); // Output -> [1, 2] (arr1 is affected)
+        
+        -[1] ===` [1] // false (different references in memory)
+            let arr1 = [1]; let arr2 = arr1; arr2.push
+            (2); console.log(arr1); // Output -> [1, 2] (arr1 is affected)
+        -[]== [] // false (different references in memory)
+            let arr1 = []; let arr2 = arr1; arr2.push(1); console.log(arr1); // Output -> [1] (arr1 is affected)
+        -[] === [] // false (different references in memory)
+            let arr1 = []; let arr2 = arr1; arr2.push(1);
+            console.log(arr1); // Output -> [1] (arr1 is affected)
+
+        - this is because each array literal (e.g., [1], []) creates a new array in memory, 
+                and even if the contents are the same, they are different objects with different references.
+
+
+CONSTANT ARRAYS
+
+    - In JavaScript, you can declare an array using the const keyword, which means that the reference to the array cannot be changed.
+    - However, you can still modify the contents of the array (add, remove, or change elements) even if the array is declared as a constant.
+    - we can not change the reference of the array but we can change the contents of the array.
+
+    - Example of Constant Array
+        const numbers = [1, 2, 3];
+        numbers.push(4); // adding an element to the array
+        console.log(numbers); // Output -> [1, 2, 3, 4]
+        
+        numbers[0] = 10; // changing the first element of the array
+        console.log(numbers); // Output -> [10, 2, 3, 4]
+        
+        // numbers = [5, 6, 7]; // This will throw an error because we cannot reassign a constant variable
+        // console.log(numbers);
+        
+    - In the above example, we declared an array called numbers using const. 
+            We were able to modify the contents of the array by adding an element and changing an element. 
+            However, if we try to reassign the entire array to a new array, it will throw an error.
+
+
+
+- NESTED ARRAYS or MULTIDIMENSIONAL ARRAYS
+
+    - Nested Arrays are arrays that contain other arrays as elements.
+    - Nested Arrays allow you to create multi-dimensional data structures, such as matrices or grids.
+    - You can access elements in a nested array using multiple indices.
+    - NUM[ROW][COLUMN]
+    - Example of Nested Array
+        let matrix = [
+            [1, 2, 3],
+            [4, 5, 6],
+            [7, 8, 9]
+        ];
+        console.log(matrix[0]); // Output -> [1, 2, 3] (first row)
+        console.log(matrix[1][2]); // Output -> 6 (element in the second row and third column)
+        console.log(matrix[2][0]); // Output -> 7 (element in the third row and first column)
+        
+    - You can also use nested loops to iterate through all elements in a nested array.
+    
+    - Example of Iterating through a Nested Array
+        for (let i = 0; i < matrix.length; i++) {
+            for (let j = 0; j < matrix[i].length; j++) {
+                console.log(matrix[i][j]);
+            }
+        }
+        // Output ->
+        // 1
+        // 2
+        // 3
+        // 4
+        // 5
+        // 6
+        // 7
+        // 8
+        // 9

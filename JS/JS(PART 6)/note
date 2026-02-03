@@ -1,0 +1,192 @@
+FUNCTIONS IN JS
+        - A function is a block of code designed to perform a particular task.
+        - Functions are executed when they are called (invoked).
+        - Syntax:
+                function functionName(parameters) {
+                    // code to be executed
+                }
+
+                functionName(arguments); // Calling the function
+
+        - Example
+                function sayHello() {
+                    console.log("Hello, World!");
+                }
+                sayHello(); // Calling the function
+
+        - Example:
+                function greet(name) {
+                    return "Hello, " + name + "!";
+                }
+
+                console.log(greet("Alice")); // Outputs: Hello, Alice!
+
+        - Function Parameters vs Arguments:
+                - Parameters are the names listed in the function definition.
+                - Arguments are the real values passed to the function.
+              
+                Example:
+                function multiply(a, b) { // a and b are parameters
+                    return a * b;
+                }
+                multiply(2, 3); // 2 and 3 are arguments
+
+                when the function is called, the arguments 2 and 3 are passed to the parameters a and b respectively.
+                we have to provide the input values (arguments) when calling the function.
+                Order of arguments matters; they are assigned to parameters based on their position.
+
+                
+        - Return Statement:
+                - The return statement ends function execution and specifies a value to be returned to the function caller.
+                - If no return statement is specified, the function returns undefined by default.       
+        - Function Expressions:
+                let square = function(number) {
+                    return number * number;
+                };
+
+                console.log(square(5)); // Outputs: 25
+
+
+SCOPE 
+        -scope determines the accessibility of variables , object and function from different part of the code
+                -Function 
+                -block
+                -Lexical
+                -Global
+        - tells us which function can be used at a place and which cannot be used 
+
+        -Function Scope:
+                - Variables declared within a function are only accessible within that function.
+               
+                        Example:
+                        function myFunction() {
+                        let x = 10; // x is function-scoped
+                        console.log(x); // Outputs: 10
+                        }
+                        myFunction();
+                        console.log(x); // Error: x is not defined
+
+        -Block Scope:
+                - Variables declared with let or const inside a block (e.g., within curly braces {}) are only accessible within that block.
+                
+                        Example:
+                        {
+                        let y = 20; // y is block-scoped
+                        console.log(y); // Outputs: 20
+                        }
+                        console.log(y); // Error: y is not defined
+
+        -Lexical Scope:
+                - Functions are executed using the scope chain that was in effect when they were defined, not when they are executed.
+                - opposite is not true i.e., inner function can access variables of outer function but outer function cannot access variables of inner function.
+                - it is like a nested structure where inner functions have access to variables of their outer functions.
+                
+                NOTE - the inner function has access to the variables even if the variables are declared after the inner function in the outer function.
+                        this is because of the way JavaScript handles variable declarations (hoisting). 
+                      hoisting allows variable declarations (but not initializations) to be moved to the top of their containing scope during the compilation phase.
+                
+                - Inner function cannot be directly accessed from outside its outer function. As it is encapsulated within the outer function [function scope].
+                     
+                        Example:
+                        function outer() {
+                        let z = 30;
+                        function inner() {
+                            console.log(z); // inner function can access z
+                        }
+                        inner();
+                        }
+                        outer(); // Outputs: 30 
+        
+        -Global Scope:
+                - Variables declared outside of any function or block are in the global scope and can be accessed from anywhere in the code.
+                
+                        Example:
+                        let a = 40; // a is globally scoped
+                        function display() {
+                        console.log(a); // Outputs: 40
+                        }
+                        display();
+                        console.log(a); // Outputs: 40  
+
+FUNCTION Expressions
+        - A function expression is a function that is assigned to a variable.
+        - Function expressions can be anonymous or named.
+        -it is like defining a function and assigning it to a variable.
+        - Syntax:
+                let functionName = function(parameters) {
+                    // code to be executed
+                };
+
+        - Example:
+                let add = function(x, y) {
+                    return x + y;
+                };
+
+                console.log(add(5, 3)); // Outputs: 8
+
+        - Named Function Expression:
+                let factorial = function fact(n) {
+                    if (n <= 1) return 1;
+                    return n * fact(n - 1); // Recursive call
+                };
+
+                console.log(factorial(5)); // Outputs: 120
+
+HIGH ORDER FUNCTION 
+        - A higher-order function is a function that either takes one or more functions as arguments 
+               or returns a function as its result.
+        - Higher-order functions allow for functional programming techniques, such as function composition and currying.
+        
+        - Example of a higher-order function that takes a function as an argument:
+                
+                function applyOperation(a, b, operation) { // operation is a function passed as an argument
+                    return operation(a, b); // Call the passed function
+                }
+
+                function add(x, y) {
+                    return x + y;
+                }
+
+                function multiply(x, y) {
+                    return x * y;
+                }
+
+                console.log(applyOperation(5, 3, add)); // Outputs: 8
+                console.log(applyOperation(5, 3, multiply)); // Outputs: 15
+
+        - Example of a higher-order function that returns a function:
+              
+                function createMultiplier(factor) { // Returns a function that multiplies by the given factor
+                    return function(number) { // Inner function
+                        return number * factor;  // Accesses factor from the outer function Scope
+                    };
+                }
+
+                let double = createMultiplier(2);
+                let triple = createMultiplier(3);
+
+                console.log(double(5)); // Outputs: 10
+                console.log(triple(5)); // Outputs: 15
+
+METHODS 
+        - A method is a function that is a property of an object.
+        - Methods are used to define behaviors for objects.
+        -Action that can be performed on objects.
+        - for object when we have to define function , these function are called method.
+        - Syntax:
+                let objectName = {
+                    methodName: function(parameters) {
+                        // code to be executed
+                    }
+                };
+
+        - Example:
+                let person = {
+                    firstName: "John",
+                    lastName: "Doe",
+                    fullName: function() { // fullName is a method
+                        return this.firstName + " " + this.lastName; // 'this' refers to the current object
+                    }
+                };
+
+                console.log(person.fullName()); // Outputs: John Doe
